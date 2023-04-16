@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>AccountContactRelation</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Vehicle_Record_Page</members>
+		<name>FlexiPage</name>
+	</types>
+	<types>
+		<members>Account.Dealer</members>
+		<members>Account.Household</members>
+		<name>RecordType</name>
+	</types>
+	<types>
+		<members>Vehicle_Relations</members>
+		<name>RelationshipGraphDefinition</name>
+	</types>
+	<version>55.0</version>
+</Package>

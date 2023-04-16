@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelationshipGraphDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <isTemplate>false</isTemplate>
+    <masterLabel>Vehicle Relations</masterLabel>
+    <relationshipGraphDefVersions>
+        <graphDefinition>{
+  &quot;graph&quot; : {
+    &quot;rootNode&quot; : {
+      &quot;sortFields&quot; : [ {
+        &quot;field&quot; : {
+          &quot;field&quot; : &quot;LastModifiedDate&quot;,
+          &quot;whichEntity&quot; : &quot;TARGET&quot;
+        },
+        &quot;order&quot; : &quot;DESC&quot;
+      } ],
+      &quot;object&quot; : {
+        &quot;entity&quot; : &quot;Vehicle&quot;
+      },
+      &quot;configurationType&quot; : &quot;Primary&quot;,
+      &quot;nodeUiConfig&quot; : {
+        &quot;label&quot; : &quot;Vehicle&quot;,
+        &quot;fieldsToDisplay&quot; : [ ],
+        &quot;showFieldLabels&quot; : true,
+        &quot;actions&quot; : { }
+      },
+      &quot;childRelationships&quot; : [ {
+        &quot;ManyToMany&quot; : {
+          &quot;targetObjectNode&quot; : {
+            &quot;sortFields&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;order&quot; : &quot;DESC&quot;
+            } ],
+            &quot;object&quot; : {
+              &quot;entity&quot; : &quot;Account&quot;
+            },
+            &quot;configurationType&quot; : &quot;Primary&quot;,
+            &quot;nodeUiConfig&quot; : {
+              &quot;label&quot; : &quot;Dealer&quot;,
+              &quot;recordActionsLabel&quot; : &quot;&quot;,
+              &quot;fieldsToDisplay&quot; : [ {
+                &quot;field&quot; : &quot;Name&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              }, {
+                &quot;field&quot; : &quot;Dealer_Code__c&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              }, {
+                &quot;field&quot; : &quot;Phone&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              } ],
+              &quot;showFieldLabels&quot; : true,
+              &quot;actions&quot; : {
+                &quot;containerActions&quot; : [ {
+                  &quot;action&quot; : &quot;New&quot;
+                } ],
+                &quot;recordActions&quot; : [ {
+                  &quot;action&quot; : &quot;Edit&quot;
+                } ],
+                &quot;junctionRecordActions&quot; : [ {
+                  &quot;action&quot; : &quot;Edit&quot;
+                } ]
+              },
+              &quot;junctionActionsLabel&quot; : &quot;&quot;
+            },
+            &quot;childRelationships&quot; : [ {
+              &quot;OneToMany&quot; : {
+                &quot;targetObjectNode&quot; : {
+                  &quot;sortFields&quot; : [ {
+                    &quot;field&quot; : {
+                      &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                      &quot;whichEntity&quot; : &quot;TARGET&quot;
+                    },
+                    &quot;order&quot; : &quot;DESC&quot;
+                  } ],
+                  &quot;object&quot; : {
+                    &quot;entity&quot; : &quot;Contact&quot;
+                  },
+                  &quot;configurationType&quot; : &quot;Primary&quot;,
+                  &quot;nodeUiConfig&quot; : {
+                    &quot;label&quot; : &quot;Contacts&quot;,
+                    &quot;recordActionsLabel&quot; : &quot;&quot;,
+                    &quot;fieldsToDisplay&quot; : [ {
+                      &quot;field&quot; : &quot;Name&quot;,
+                      &quot;whichEntity&quot; : &quot;TARGET&quot;
+                    }, {
+                      &quot;field&quot; : &quot;Phone&quot;,
+                      &quot;whichEntity&quot; : &quot;TARGET&quot;
+                    } ],
+                    &quot;showFieldLabels&quot; : true,
+                    &quot;actions&quot; : {
+                      &quot;containerActions&quot; : [ {
+                        &quot;action&quot; : &quot;NewContact&quot;
+                      } ],
+                      &quot;recordActions&quot; : [ {
+                        &quot;action&quot; : &quot;Edit&quot;
+                      } ]
+                    }
+                  },
+                  &quot;childRelationships&quot; : [ ]
+                },
+                &quot;relationshipUiConfig&quot; : { },
+                &quot;filter&quot; : {
+                  &quot;filterCriteria&quot; : [ ],
+                  &quot;booleanFilter&quot; : &quot;&quot;
+                },
+                &quot;targetObjectField&quot; : {
+                  &quot;field&quot; : &quot;AccountId&quot;,
+                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                }
+              }
+            } ]
+          },
+          &quot;relationshipUiConfig&quot; : { },
+          &quot;filter&quot; : {
+            &quot;filterCriteria&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;RecordType.DeveloperName&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;operator&quot; : &quot;eq&quot;,
+              &quot;value&quot; : &quot;Dealer&quot;
+            } ],
+            &quot;booleanFilter&quot; : &quot;1&quot;
+          },
+          &quot;junctionObject&quot; : {
+            &quot;entity&quot; : &quot;AssetAccountParticipant&quot;
+          },
+          &quot;sourceField&quot; : {
+            &quot;field&quot; : &quot;VehicleId&quot;
+          },
+          &quot;targetField&quot; : {
+            &quot;field&quot; : &quot;AccountId&quot;
+          }
+        }
+      }, {
+        &quot;ManyToMany&quot; : {
+          &quot;targetObjectNode&quot; : {
+            &quot;sortFields&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;order&quot; : &quot;DESC&quot;
+            } ],
+            &quot;object&quot; : {
+              &quot;entity&quot; : &quot;Account&quot;
+            },
+            &quot;configurationType&quot; : &quot;Custom&quot;,
+            &quot;nodeUiConfig&quot; : {
+              &quot;label&quot; : &quot;Current Household&quot;,
+              &quot;recordActionsLabel&quot; : &quot;&quot;,
+              &quot;fieldsToDisplay&quot; : [ {
+                &quot;field&quot; : &quot;Name&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              }, {
+                &quot;field&quot; : &quot;Phone&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              } ],
+              &quot;showFieldLabels&quot; : true,
+              &quot;actions&quot; : {
+                &quot;containerActions&quot; : [ {
+                  &quot;action&quot; : &quot;New&quot;
+                } ],
+                &quot;recordActions&quot; : [ {
+                  &quot;action&quot; : &quot;Edit&quot;
+                } ],
+                &quot;junctionRecordActions&quot; : [ {
+                  &quot;action&quot; : &quot;Edit&quot;
+                } ]
+              },
+              &quot;junctionActionsLabel&quot; : &quot;&quot;
+            },
+            &quot;childRelationships&quot; : [ {
+              &quot;OneToMany&quot; : {
+                &quot;targetObjectNode&quot; : {
+                  &quot;sortFields&quot; : [ {
+                    &quot;field&quot; : {
+                      &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                      &quot;whichEntity&quot; : &quot;TARGET&quot;
+                    },
+                    &quot;order&quot; : &quot;DESC&quot;
+                  } ],
+                  &quot;object&quot; : {
+                    &quot;entity&quot; : &quot;Contact&quot;
+                  },
+                  &quot;configurationType&quot; : &quot;Custom&quot;,
+                  &quot;nodeUiConfig&quot; : {
+                    &quot;label&quot; : &quot;Household Contact&quot;,
+                    &quot;recordActionsLabel&quot; : &quot;&quot;,
+                    &quot;fieldsToDisplay&quot; : [ ],
+                    &quot;showFieldLabels&quot; : true,
+                    &quot;actions&quot; : {
+                      &quot;containerActions&quot; : [ ],
+                      &quot;recordActions&quot; : [ ]
+                    }
+                  },
+                  &quot;childRelationships&quot; : [ {
+                    &quot;OneToMany&quot; : {
+                      &quot;targetObjectNode&quot; : {
+                        &quot;sortFields&quot; : [ {
+                          &quot;field&quot; : {
+                            &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                            &quot;whichEntity&quot; : &quot;TARGET&quot;
+                          },
+                          &quot;order&quot; : &quot;DESC&quot;
+                        } ],
+                        &quot;object&quot; : {
+                          &quot;entity&quot; : &quot;Case&quot;
+                        },
+                        &quot;configurationType&quot; : &quot;Primary&quot;,
+                        &quot;nodeUiConfig&quot; : {
+                          &quot;label&quot; : &quot;Cases&quot;,
+                          &quot;recordActionsLabel&quot; : &quot;&quot;,
+                          &quot;fieldsToDisplay&quot; : [ {
+                            &quot;field&quot; : &quot;CaseNumber&quot;,
+                            &quot;whichEntity&quot; : &quot;TARGET&quot;
+                          }, {
+                            &quot;field&quot; : &quot;Subject&quot;,
+                            &quot;whichEntity&quot; : &quot;TARGET&quot;
+                          }, {
+                            &quot;field&quot; : &quot;Asset.Name&quot;,
+                            &quot;whichEntity&quot; : &quot;TARGET&quot;
+                          } ],
+                          &quot;showFieldLabels&quot; : true,
+                          &quot;actions&quot; : {
+                            &quot;containerActions&quot; : [ {
+                              &quot;action&quot; : &quot;NewCase&quot;
+                            } ],
+                            &quot;recordActions&quot; : [ {
+                              &quot;action&quot; : &quot;Edit&quot;
+                            } ]
+                          }
+                        },
+                        &quot;childRelationships&quot; : [ {
+                          &quot;OneToMany&quot; : {
+                            &quot;targetObjectNode&quot; : {
+                              &quot;sortFields&quot; : [ {
+                                &quot;field&quot; : {
+                                  &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                                },
+                                &quot;order&quot; : &quot;DESC&quot;
+                              } ],
+                              &quot;object&quot; : {
+                                &quot;entity&quot; : &quot;CaseComment&quot;
+                              },
+                              &quot;configurationType&quot; : &quot;Primary&quot;,
+                              &quot;nodeUiConfig&quot; : {
+                                &quot;label&quot; : &quot;Case Comments&quot;,
+                                &quot;recordActionsLabel&quot; : &quot;&quot;,
+                                &quot;fieldsToDisplay&quot; : [ {
+                                  &quot;field&quot; : &quot;CommentBody&quot;,
+                                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                                }, {
+                                  &quot;field&quot; : &quot;CreatedDate&quot;,
+                                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                                }, {
+                                  &quot;field&quot; : &quot;CreatedBy.Name&quot;,
+                                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                                } ],
+                                &quot;showFieldLabels&quot; : true,
+                                &quot;actions&quot; : {
+                                  &quot;containerActions&quot; : [ ],
+                                  &quot;recordActions&quot; : [ ]
+                                }
+                              },
+                              &quot;childRelationships&quot; : [ ]
+                            },
+                            &quot;relationshipUiConfig&quot; : { },
+                            &quot;filter&quot; : {
+                              &quot;filterCriteria&quot; : [ ],
+                              &quot;booleanFilter&quot; : &quot;&quot;
+                            },
+                            &quot;targetObjectField&quot; : {
+                              &quot;field&quot; : &quot;ParentId&quot;,
+                              &quot;whichEntity&quot; : &quot;TARGET&quot;
+                            }
+                          }
+                        } ]
+                      },
+                      &quot;relationshipUiConfig&quot; : { },
+                      &quot;filter&quot; : {
+                        &quot;filterCriteria&quot; : [ ],
+                        &quot;booleanFilter&quot; : &quot;&quot;
+                      },
+                      &quot;targetObjectField&quot; : {
+                        &quot;field&quot; : &quot;ContactId&quot;,
+                        &quot;whichEntity&quot; : &quot;TARGET&quot;
+                      }
+                    }
+                  } ]
+                },
+                &quot;relationshipUiConfig&quot; : { },
+                &quot;filter&quot; : {
+                  &quot;filterCriteria&quot; : [ ],
+                  &quot;booleanFilter&quot; : &quot;&quot;
+                },
+                &quot;targetObjectField&quot; : {
+                  &quot;field&quot; : &quot;AccountId&quot;,
+                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                }
+              }
+            }, {
+              &quot;ManyToMany&quot; : {
+                &quot;targetObjectNode&quot; : {
+                  &quot;sortFields&quot; : [ {
+                    &quot;field&quot; : {
+                      &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                      &quot;whichEntity&quot; : &quot;TARGET&quot;
+                    },
+                    &quot;order&quot; : &quot;DESC&quot;
+                  } ],
+                  &quot;object&quot; : {
+                    &quot;entity&quot; : &quot;Contact&quot;
+                  },
+                  &quot;configurationType&quot; : &quot;Custom&quot;,
+                  &quot;nodeUiConfig&quot; : {
+                    &quot;label&quot; : &quot;Referral Contacts&quot;,
+                    &quot;recordActionsLabel&quot; : &quot;&quot;,
+                    &quot;fieldsToDisplay&quot; : [ ],
+                    &quot;showFieldLabels&quot; : true,
+                    &quot;actions&quot; : {
+                      &quot;containerActions&quot; : [ ],
+                      &quot;recordActions&quot; : [ ],
+                      &quot;junctionRecordActions&quot; : [ ]
+                    },
+                    &quot;junctionActionsLabel&quot; : &quot;&quot;
+                  },
+                  &quot;childRelationships&quot; : [ ]
+                },
+                &quot;relationshipUiConfig&quot; : { },
+                &quot;filter&quot; : {
+                  &quot;filterCriteria&quot; : [ {
+                    &quot;field&quot; : {
+                      &quot;field&quot; : &quot;Roles&quot;,
+                      &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+                    },
+                    &quot;operator&quot; : &quot;eq&quot;,
+                    &quot;value&quot; : &quot;Influencer&quot;
+                  } ],
+                  &quot;booleanFilter&quot; : &quot;1&quot;
+                },
+                &quot;junctionObject&quot; : {
+                  &quot;entity&quot; : &quot;AccountContactRelation&quot;
+                },
+                &quot;sourceField&quot; : {
+                  &quot;field&quot; : &quot;AccountId&quot;
+                },
+                &quot;targetField&quot; : {
+                  &quot;field&quot; : &quot;ContactId&quot;
+                }
+              }
+            } ]
+          },
+          &quot;relationshipUiConfig&quot; : { },
+          &quot;filter&quot; : {
+            &quot;filterCriteria&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;RecordType.DeveloperName&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;operator&quot; : &quot;eq&quot;,
+              &quot;value&quot; : &quot;Household&quot;
+            }, {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;IsActive&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              },
+              &quot;operator&quot; : &quot;eq&quot;,
+              &quot;value&quot; : true
+            } ],
+            &quot;booleanFilter&quot; : &quot;1 and 2&quot;
+          },
+          &quot;junctionObject&quot; : {
+            &quot;entity&quot; : &quot;AssetAccountParticipant&quot;
+          },
+          &quot;sourceField&quot; : {
+            &quot;field&quot; : &quot;VehicleId&quot;
+          },
+          &quot;targetField&quot; : {
+            &quot;field&quot; : &quot;AccountId&quot;
+          }
+        }
+      }, {
+        &quot;ManyToMany&quot; : {
+          &quot;targetObjectNode&quot; : {
+            &quot;sortFields&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;order&quot; : &quot;DESC&quot;
+            } ],
+            &quot;object&quot; : {
+              &quot;entity&quot; : &quot;Account&quot;
+            },
+            &quot;configurationType&quot; : &quot;Custom&quot;,
+            &quot;nodeUiConfig&quot; : {
+              &quot;label&quot; : &quot;Previous Owners&quot;,
+              &quot;recordActionsLabel&quot; : &quot;&quot;,
+              &quot;fieldsToDisplay&quot; : [ ],
+              &quot;showFieldLabels&quot; : true,
+              &quot;actions&quot; : {
+                &quot;containerActions&quot; : [ ],
+                &quot;recordActions&quot; : [ ],
+                &quot;junctionRecordActions&quot; : [ ]
+              },
+              &quot;junctionActionsLabel&quot; : &quot;&quot;
+            },
+            &quot;childRelationships&quot; : [ {
+              &quot;OneToMany&quot; : {
+                &quot;targetObjectNode&quot; : {
+                  &quot;sortFields&quot; : [ {
+                    &quot;field&quot; : {
+                      &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                      &quot;whichEntity&quot; : &quot;TARGET&quot;
+                    },
+                    &quot;order&quot; : &quot;DESC&quot;
+                  } ],
+                  &quot;object&quot; : {
+                    &quot;entity&quot; : &quot;Contact&quot;
+                  },
+                  &quot;configurationType&quot; : &quot;Custom&quot;,
+                  &quot;nodeUiConfig&quot; : {
+                    &quot;label&quot; : &quot;Contacts&quot;,
+                    &quot;recordActionsLabel&quot; : &quot;&quot;,
+                    &quot;fieldsToDisplay&quot; : [ ],
+                    &quot;showFieldLabels&quot; : true,
+                    &quot;actions&quot; : {
+                      &quot;containerActions&quot; : [ ],
+                      &quot;recordActions&quot; : [ ]
+                    }
+                  },
+                  &quot;childRelationships&quot; : [ ]
+                },
+                &quot;relationshipUiConfig&quot; : { },
+                &quot;filter&quot; : {
+                  &quot;filterCriteria&quot; : [ ],
+                  &quot;booleanFilter&quot; : &quot;&quot;
+                },
+                &quot;targetObjectField&quot; : {
+                  &quot;field&quot; : &quot;AccountId&quot;,
+                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                }
+              }
+            } ]
+          },
+          &quot;relationshipUiConfig&quot; : { },
+          &quot;filter&quot; : {
+            &quot;filterCriteria&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;IsActive&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              },
+              &quot;operator&quot; : &quot;eq&quot;,
+              &quot;value&quot; : false
+            }, {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;StakeholderRole&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              },
+              &quot;operator&quot; : &quot;eq&quot;,
+              &quot;value&quot; : &quot;Previous Owner&quot;
+            } ],
+            &quot;booleanFilter&quot; : &quot;1 and 2&quot;
+          },
+          &quot;junctionObject&quot; : {
+            &quot;entity&quot; : &quot;AssetAccountParticipant&quot;
+          },
+          &quot;sourceField&quot; : {
+            &quot;field&quot; : &quot;VehicleId&quot;
+          },
+          &quot;targetField&quot; : {
+            &quot;field&quot; : &quot;AccountId&quot;
+          }
+        }
+      } ]
+    },
+    &quot;globalUiConfig&quot; : { }
+  }
+}</graphDefinition>
+        <graphType>HorizontalHierarchy</graphType>
+    </relationshipGraphDefVersions>
+</RelationshipGraphDefinition>
